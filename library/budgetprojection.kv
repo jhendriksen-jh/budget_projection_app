@@ -1,0 +1,55 @@
+<BudgetProjectionGUI>:
+
+    user: user # username that will decide which datafile to read from
+    type: type # defines what type of information the user would like to input
+    #amount: amount # used with category to track spending
+
+    #account: account # optional input - used for tracking account balances
+   # balance: balance # pairs with account - used for tracking account balances
+   # data: date # optional input - if blank will be current date 
+    #category: category # used for tracking spending (user defined categories)
+   # time_frame: time_frame # used to calculate time frames used in comparisons
+    #budget: budget # user defined budget for month (total spent)
+
+
+    FloatLayout:
+        size: root.width, root.height/2
+
+        Label:
+            text: "Input Information"
+            size_hint: 0.2, 0.2
+            pos_hint: {"x":0.02, "top":2}
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        Label:
+            size_hint: 0.1,0.12
+            pos_hint: {"x":0, "top":1.8}
+            text: "User:"
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        TextInput:
+            pos_hint: {"x":0.02, "top":1.8-0.13}
+            size_hint: 0.2, 0.12
+            id: user
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        Label:
+            size_hint: 0.1,0.12
+            pos_hint: {"x":0, "top":1.8-0.13*2}
+            text: "Type:"
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        TextInput:
+            pos_hint: {"x":0.02, "top":1.8-0.13*3}
+            size_hint: 0.2, 0.12
+            id: type
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        Button:
+            pos_hint:{"x":0.2,"y":0.05}
+            size_hint: 0.6, 0.15
+            text: "Submit"
+            font_size: (root.width**2 + root.height**2) / 15**4
+            on_press: root.access_user_data()

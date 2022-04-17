@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# vscode 
+.vscode
+
+# Don't need user data in repo
+user_data
